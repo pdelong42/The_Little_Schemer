@@ -1,0 +1,25 @@
+(define insertR
+   (lambda
+      (new old lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (else
+            (cons
+               (car lat)
+               (cond
+                  (  (eq?  old (car lat))
+                     (cons new (cdr lat))
+                  )
+                  (else (insertR new old (cdr lat)))
+               )
+            )
+         )
+      )
+   )
+)
+
+(insertR 'topping 'fudge '(ice cream with fudge for desert))
+
+(insertR 'jalape√o 'and '(tacos tamales and salsa))

@@ -1,0 +1,24 @@
+(define rember 
+   (lambda      
+      (a lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (eq? a (car lat))
+            (cdr lat)
+         )
+         (else
+            (cons
+               (car lat)
+               (rember a (cdr lat))
+            )
+         )
+      )
+   )
+)
+
+(rember 'a '(a b a c a b))
+(rember 'b '(a b a c a b))
+(rember 'c '(a b a c a b))
+(rember 'd '(a b a c a b))
