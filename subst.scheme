@@ -1,0 +1,23 @@
+(define subst
+   (lambda
+      (new old lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (eq?  old (car lat))
+            (cons new (cdr lat))
+         )
+         (else
+            (cons
+               (car lat)
+               (subst new old (cdr lat))
+            )
+         )
+      )
+   )
+)
+
+(subst 'topping 'fudge '(ice cream with fudge for desert))
+
+(subst 'jalape√o 'and '(tacos tamales and salsa))
