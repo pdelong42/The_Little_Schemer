@@ -1,4 +1,4 @@
-The_Little_Schemer
+The Little Schemer
 ==================
 
 These are my solutions to the exercies in "The Little Schemer" (4th. ed.), by Daniel P. Friedman and Matthias Felleisen.
