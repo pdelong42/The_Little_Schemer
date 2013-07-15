@@ -1,0 +1,13 @@
+Chapter 2:
+
+lat? (ToDo)
+member? (ToDo)
+
+Chapter 3:
+
+rember
+firsts
+insertR
+insertL
+subst
+subst2

@@ -1,0 +1,32 @@
+(define subst2
+   (lambda
+      (new o1 o2 lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (eq?   o1 (car lat))
+            (cons new (cdr lat))
+         )
+         (  (eq?   o2 (car lat))
+            (cons new (cdr lat))
+         )
+         (else
+            (cons
+               (car lat)
+               (subst2 new o1 o2 (cdr lat))
+            )
+         )
+      )
+   )
+)
+
+(subst2 'vanilla 'chocolate 'banana '(banana ice cream with chocolate topping))
+
+(subst2 'vanilla 'banana 'chocolate '(banana ice cream with chocolate topping))
+
+(subst2 'vanilla 'vanilla 'chocolate '(banana ice cream with chocolate topping))
+
+(subst2 'vanilla 'vanilla 'vanilla '(banana ice cream with chocolate topping))
+
+(subst2 'strawberry 'vanilla 'vanilla '(banana ice cream with chocolate topping))
