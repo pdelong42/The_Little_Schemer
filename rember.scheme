@@ -18,7 +18,24 @@
    )
 )
 
+(rember 'mint '(lamb chops and mint jelly))
+
+(rember 'mint '(lamb chops and mint flavored mint jelly))
+
+(rember 'toast '(bacon lettuce and tomato))
+
+(rember 'cup '(coffee cup tea cup and hick cup))
+
+(rember 'bacon '(bacon lettuce and tomato))
+
+(rember 'and '(bacon lettuce and tomato))
+
+(rember 'sauce '(soy sauce and tomato sauce))
+
 (rember 'a '(a b a c a b))
+
 (rember 'b '(a b a c a b))
+
 (rember 'c '(a b a c a b))
+
 (rember 'd '(a b a c a b))
