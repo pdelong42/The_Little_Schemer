@@ -1,7 +1,11 @@
+Chapter 1:
+
+atom?
+
 Chapter 2:
 
-lat? (ToDo)
-member? (ToDo)
+lat?
+member?
 
 Chapter 3:
 
@@ -11,3 +15,4 @@ insertR
 insertL
 subst
 subst2
+multirember
