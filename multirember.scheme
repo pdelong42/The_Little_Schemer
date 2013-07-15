@@ -1,0 +1,41 @@
+(define multirember
+   (lambda      
+      (a lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (eq? a (car lat))
+            (multirember a (cdr lat))
+         )
+         (else
+            (cons
+               (car lat)
+               (multirember a (cdr lat))
+            )
+         )
+      )
+   )
+)
+
+(multirember 'mint '(lamb chops and mint jelly))
+
+(multirember 'mint '(lamb chops and mint flavored mint jelly))
+
+(multirember 'toast '(bacon lettuce and tomato))
+
+(multirember 'cup '(coffee cup tea cup and hick cup))
+
+(multirember 'bacon '(bacon lettuce and tomato))
+
+(multirember 'and '(bacon lettuce and tomato))
+
+(multirember 'sauce '(soy sauce and tomato sauce))
+
+(multirember 'a '(a b a c a b))
+
+(multirember 'b '(a b a c a b))
+
+(multirember 'c '(a b a c a b))
+
+(multirember 'd '(a b a c a b))
