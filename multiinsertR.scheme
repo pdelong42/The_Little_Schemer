@@ -1,0 +1,29 @@
+(define multiinsertR
+   (lambda
+      (new old lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (else
+            (cons
+               (car lat)
+               (cond
+                  (  (eq?  old (car lat))
+                     (cons new (multiinsertR new old (cdr lat)))
+                  )
+                  (else (multiinsertR new old (cdr lat)))
+               )
+            )
+         )
+      )
+   )
+)
+
+(multiinsertR 'topping 'fudge '(ice cream with fudge for desert))
+
+(multiinsertR 'jalape√o 'and '(tacos tamales and salsa))
+
+(multiinsertR '(8oz) 'cup '(coffee cup tea cup and hick cup))
+
+(multiinsertR '(low sodium) 'sauce '(soy sauce and tomato sauce))
