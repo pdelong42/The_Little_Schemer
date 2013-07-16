@@ -16,3 +16,6 @@ insertL
 subst
 subst2
 multirember
+multiinsertR (ToDo)
+multiinsertL (ToDo)
+multisubst (ToDo)
