@@ -19,3 +19,11 @@ multirember
 multiinsertR
 multiinsertL
 multisubst
+
+Chapter 4:
+
+peano.scheme:
+add1
+sub1
+o+
+o-

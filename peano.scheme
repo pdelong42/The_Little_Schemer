@@ -1,0 +1,47 @@
+(define add1
+   (lambda
+      (n)
+      (+ n 1)
+   )
+)
+
+(define sub1
+   (lambda
+      (n)
+      (- n 1)
+   )
+)
+
+(define o+
+   (lambda
+      (a b)
+      (cond
+         (  (zero? b) a)
+         (else (add1 (o+ a (sub1 b))))
+      )
+   )
+)
+
+(define o-
+   (lambda
+      (a b)
+      (cond
+         (  (zero? b) a)
+         (else (sub1 (o- a (sub1 b))))
+      )
+   )
+)
+
+(o+ 0 7)
+
+(o+ 3 5)
+
+(o+ 9 0)
+
+(o+ 0 0)
+
+(o- 5 2)
+
+(o- 4 0)
+
+(o- 0 0)
