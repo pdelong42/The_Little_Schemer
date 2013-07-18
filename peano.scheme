@@ -5,12 +5,16 @@
    )
 )
 
+(add1 67)
+
 (define sub1
    (lambda
       (n)
       (- n 1)
    )
 )
+
+(sub1 5)
 
 (define o+
    (lambda
@@ -22,13 +26,7 @@
    )
 )
 
-(o+ 0 7)
-
-(o+ 3 5)
-
-(o+ 9 0)
-
-(o+ 0 0)
+(o+ 46 12)
 
 (define o-
    (lambda
@@ -40,11 +38,9 @@
    )
 )
 
-(o- 5 2)
+(o- 14 3)
 
-(o- 4 0)
-
-(o- 0 0)
+(o- 17 9)
 
 (define addtup
    (lambda
@@ -61,9 +57,9 @@
    )
 )
 
-(addtup '(1 2 3 4 5))
+(addtup '(3 5 2 8))
 
-(addtup '(3 8 0 11 9 2))
+(addtup '(15 6 7 12 3))
 
 (define o*
    (lambda
