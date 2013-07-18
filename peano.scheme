@@ -64,3 +64,17 @@
 (addtup '(1 2 3 4 5))
 
 (addtup '(3 8 0 11 9 2))
+
+(define o*
+   (lambda
+      (a b)
+      (cond
+         (  (zero? b) 0)
+         (else (o+ a (o* a (sub1 b))))
+      )
+   )
+)
+
+(o* 5 3)
+
+(o* 13 4)

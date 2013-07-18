@@ -28,3 +28,4 @@ sub1
 o+
 o-
 addtup
+o*
