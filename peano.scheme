@@ -22,6 +22,14 @@
    )
 )
 
+(o+ 0 7)
+
+(o+ 3 5)
+
+(o+ 9 0)
+
+(o+ 0 0)
+
 (define o-
    (lambda
       (a b)
@@ -32,16 +40,27 @@
    )
 )
 
-(o+ 0 7)
-
-(o+ 3 5)
-
-(o+ 9 0)
-
-(o+ 0 0)
-
 (o- 5 2)
 
 (o- 4 0)
 
 (o- 0 0)
+
+(define addtup
+   (lambda
+      (tup)
+      (cond
+         (  (null? tup) 0)
+         (else
+            (o+
+               (car tup)
+               (addtup (cdr tup))
+            )
+         )
+      )
+   )
+)
+
+(addtup '(1 2 3 4 5))
+
+(addtup '(3 8 0 11 9 2))

@@ -27,3 +27,4 @@ add1
 sub1
 o+
 o-
+addtup
