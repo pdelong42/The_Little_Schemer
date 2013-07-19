@@ -79,12 +79,8 @@
    (lambda
       (tup1 tup2)
       (cond
-         (  (and
-               (null? tup1)
-               (null? tup2)
-            )
-            (quote ())
-         )
+         (  (null? tup1) tup2)
+         (  (null? tup2) tup1)
          (else
             (cons
                (o+
@@ -109,4 +105,14 @@
 (tup+
    '(2 3)
    '(4 6)
+)
+
+(tup+
+   '(3 7)
+   '(4 6)
+)
+
+(tup+
+   '(3 7)
+   '(4 6 8 1)
 )
