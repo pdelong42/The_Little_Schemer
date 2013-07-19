@@ -20,12 +20,12 @@ multiinsertR
 multiinsertL
 multisubst
 
-Chapter 4:
+Chapter 4 (peano.scheme):
 
-peano.scheme:
 add1
 sub1
 o+
 o-
 addtup
 o*
+tup+
