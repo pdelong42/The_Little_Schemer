@@ -138,3 +138,25 @@
 (gt 120 11)
 
 (gt 3 3)
+
+(define lt
+   (lambda
+      (a b)
+      (cond
+         (  (zero? b) #f)
+         (  (zero? a) #t)
+         (else
+            (lt
+               (sub1 a)
+               (sub1 b)
+            )
+         )
+      )
+   )
+)
+
+(lt 4 6)
+
+(lt 8 3)
+
+(lt 6 6)
