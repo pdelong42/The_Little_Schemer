@@ -199,3 +199,15 @@
 (power 2 3)
 
 (power 5 3)
+
+(define divide
+   (lambda
+      (a b)
+      (cond
+         (  (lt a b) 0)
+         (else (add1 (divide (- a b) b)))
+      )
+   )
+)
+
+(divide 15 4)
