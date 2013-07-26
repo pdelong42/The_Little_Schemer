@@ -165,18 +165,10 @@
    (lambda
       (a b)
       (cond
-         (  (and
-               (zero? a)
-               (zero? b)
-            )
-            #t
+         (  (zero? a)
+            (zero? b)
          )
-         (  (or
-               (zero? a)
-               (zero? b)
-            )
-            #f
-         )
+         (  (zero? b) #f)
          (else
             (eq
                (sub1 a)
