@@ -211,3 +211,17 @@
 )
 
 (divide 15 4)
+
+(define _length
+   (lambda
+      (lat)
+      (cond
+         (  (null? lat) 0)
+         (else (add1 (_length (cdr lat))))
+      )
+   )
+)
+
+(_length '(hotdogs with mustard sauerkraut and pickles))
+
+(_length '(ham and cheese on rye))
