@@ -183,3 +183,19 @@
 (eq 8 3)
 
 (eq 6 6)
+
+(define power
+   (lambda
+      (a b)
+      (cond
+         (  (zero? b) 1)
+         (else (o* a (power a (sub1 b))))
+      )
+   )
+)
+
+(power 1 1)
+
+(power 2 3)
+
+(power 5 3)
