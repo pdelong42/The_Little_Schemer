@@ -249,3 +249,28 @@
 (pick 4 '(lasagna spaghetti ravioli macaroni meatball))
 
 (pick 0 '(a))
+
+(define rempick
+   (lambda
+      (n lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (zero? (sub1 n))
+            (cdr lat)
+         )
+         (else
+            (cons
+               (car lat)
+               (rempick
+                  (sub1 n)
+                  (cdr lat)
+               )
+            )
+         )
+      )
+   )
+)
+
+(rempick 3 '(hotdogs with hot mustard))
