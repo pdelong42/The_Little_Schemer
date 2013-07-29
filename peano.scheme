@@ -225,3 +225,27 @@
 (_length '(hotdogs with mustard sauerkraut and pickles))
 
 (_length '(ham and cheese on rye))
+
+(define pick
+   (lambda
+      (n lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (zero? (sub1 n))
+            (car lat)
+         )
+         (else
+            (pick
+               (sub1 n)
+               (cdr lat)
+            )
+         )
+      )
+   )
+)
+
+(pick 4 '(lasagna spaghetti ravioli macaroni meatball))
+
+(pick 0 '(a))
