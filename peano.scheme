@@ -316,3 +316,34 @@
 )
 
 (all-nums '(5 pears 6 prunes 9 dates))
+
+(define eqan?
+   (lambda
+      (a b)
+      (cond
+         (  (and
+               (number? a)
+               (number? b)
+            )
+            (eq a b)
+         )
+         (  (or
+               (number? a)
+               (number? b)
+            )
+            #f
+         )
+         (else (eq? a b))
+      )
+   )
+)
+
+(eqan? 3 5)
+
+(eqan? 10 10)
+
+(eqan? 'a 7)
+
+(eqan? 'c 'c)
+
+(eqan? 'b 'd)
