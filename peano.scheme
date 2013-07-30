@@ -347,3 +347,22 @@
 (eqan? 'c 'c)
 
 (eqan? 'b 'd)
+
+(define occur
+   (lambda
+      (a lat)
+      (cond
+         (  (null? lat) 0)
+         (  (eqan? a (car lat))
+            (add1 (occur a (cdr lat)))
+         )
+         (else (occur a (cdr lat)))
+      )
+   )
+)
+
+(occur 'cup '(coffee cup tea cup and hick cup))
+
+(occur 'd '(a b a c a b))
+
+(occur 3 '(3.0 1 3 3 7))
