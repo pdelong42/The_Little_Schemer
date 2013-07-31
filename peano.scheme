@@ -386,3 +386,28 @@
 (one? 10)
 
 (one? 0)
+
+(define rempick
+   (lambda
+      (n lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (one? n)
+            (cdr lat)
+         )
+         (else
+            (cons
+               (car lat)
+               (rempick
+                  (sub1 n)
+                  (cdr lat)
+               )
+            )
+         )
+      )
+   )
+)
+
+(rempick 3 '(lemon meringue salty pie))
