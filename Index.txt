@@ -29,3 +29,7 @@ o-
 addtup
 o*
 tup+
+
+Chapter 4:
+
+rember* (rember.scheme)
