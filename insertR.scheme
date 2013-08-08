@@ -23,3 +23,48 @@
 (insertR 'topping 'fudge '(ice cream with fudge for desert))
 
 (insertR 'jalape√o 'and '(tacos tamales and salsa))
+
+(define atom?
+   (lambda
+      (x)
+      (not
+         (or
+            (pair? x)
+            (null? x)
+         )
+      )
+   )
+)
+
+(define insertR*
+   (lambda
+      (new old lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (else
+            (cons
+               (cond
+                  (  (atom? (car lat))
+                     (car lat)
+                  )
+                  (else (insertR* new old (car lat)))
+               )
+               (cond
+                  (  (eq?  old (car lat))
+                     (cons new (cdr lat))
+                  )
+                  (else (insertR* new old (cdr lat)))
+               )
+            )
+         )
+      )
+   )
+)
+
+(insertR* 'topping 'fudge '(ice cream with fudge for desert))
+
+(insertR* 'jalape√o 'and '(tacos tamales and salsa))
+
+(insertR* 'roast 'chuck '((how much (wood)) could ((a (wood) chuck)) (((chuck))) (if (a) ((wood chuck))) could chuck wood))
