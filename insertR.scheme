@@ -53,7 +53,7 @@
                )
                (cond
                   (  (eq?  old (car lat))
-                     (cons new (cdr lat))
+                     (cons new (insertR* new old (cdr lat)))
                   )
                   (else (insertR* new old (cdr lat)))
                )
