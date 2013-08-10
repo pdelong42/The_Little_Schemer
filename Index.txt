@@ -30,6 +30,7 @@ addtup
 o*
 tup+
 
-Chapter 4:
+Chapter 5:
 
 rember* (rember.scheme)
+insertR* (insertR.scheme)
