@@ -38,24 +38,24 @@
 
 (define insertR*
    (lambda
-      (new old lat)
+      (new old l)
       (cond
-         (  (null? lat)
+         (  (null? l)
             (quote ())
          )
          (else
             (cons
                (cond
-                  (  (atom? (car lat))
-                     (car lat)
+                  (  (atom? (car l))
+                     (car l)
                   )
-                  (else (insertR* new old (car lat)))
+                  (else (insertR* new old (car l)))
                )
                (cond
-                  (  (eq?  old (car lat))
-                     (cons new (insertR* new old (cdr lat)))
+                  (  (eq?  old (car l))
+                     (cons new (insertR* new old (cdr l)))
                   )
-                  (else (insertR* new old (cdr lat)))
+                  (else (insertR* new old (cdr l)))
                )
             )
          )
