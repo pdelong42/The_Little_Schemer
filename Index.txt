@@ -34,3 +34,4 @@ Chapter 5:
 
 rember* (rember.scheme)
 insertR* (insertR.scheme)
+occur* (peano.scheme)
