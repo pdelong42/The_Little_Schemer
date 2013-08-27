@@ -41,4 +41,8 @@
    )
 )
 
+(subst* 'topping 'fudge '(ice cream with fudge for desert))
+
+(subst* 'jalapeÃo 'and '(tacos tamales and salsa))
+
 (subst* 'orange 'banana '((banana) (split ((((banana ice))) (cream (banana)) sherbet)) (banana) (bread) (banana brandy)))
