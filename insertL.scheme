@@ -21,3 +21,25 @@
 (insertL 'topping 'fudge '(ice cream with fudge for desert))
 
 (insertL 'jalape√o 'and '(tacos tamales and salsa))
+
+(define insertL*
+   (lambda
+      (new old l)
+      (cond
+         (  (null? l)
+            (quote ())
+         )
+         (  (eq? old (car l))
+            (cons new l)
+         )
+         (else
+            (cons
+               (car l)
+               (insertL* new old (cdr l))
+            )
+         )
+      )
+   )
+)
+
+(insertL* 'pecker 'chuck '((how much (wood)) could ((a (wood) chuck)) (((chuck))) (if (a) ((wood chuck))) could chuck wood))
