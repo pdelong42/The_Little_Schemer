@@ -44,15 +44,16 @@
             (quote ())
          )
          (  (atom? l) l)
+         (  (eq? old (car l))
+            (cons
+               (          insertR* new old (car l))
+               (cons new (insertR* new old (cdr l)))
+            )
+         )
          (else
             (cons
                (insertR* new old (car l))
-               (cond
-                  (  (eq?  old (car l))
-                     (cons new (insertR* new old (cdr l)))
-                  )
-                  (else (insertR* new old (cdr l)))
-               )
+               (insertR* new old (cdr l))
             )
          )
       )
