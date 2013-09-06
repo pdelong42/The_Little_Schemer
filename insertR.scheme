@@ -43,14 +43,10 @@
          (  (null? l)
             (quote ())
          )
+         (  (atom? l) l)
          (else
             (cons
-               (cond
-                  (  (atom? (car l))
-                     (car l)
-                  )
-                  (else (insertR* new old (car l)))
-               )
+               (insertR* new old (car l))
                (cond
                   (  (eq?  old (car l))
                      (cons new (insertR* new old (cdr l)))
