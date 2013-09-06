@@ -43,7 +43,13 @@
          )
          (  (atom? l) l)
          (  (eq? old (car l))
-            (cons new l)
+            (cons
+               new
+               (cons
+                  (insertL* new old (car l))
+                  (insertL* new old (cdr l))
+               )
+            )
          )
          (else
             (cons
