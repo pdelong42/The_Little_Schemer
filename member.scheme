@@ -20,3 +20,20 @@
 (member? 'meat '(mashed potatoes and meat gravy))
 
 (member? 'liver '(bagels and lox))
+
+(define member*
+   (lambda
+      (a l)
+      (cond
+         (  (null? l) #f)
+         (else
+            (or
+               (eq?     a (car l))
+               (member? a (cdr l))
+            )
+         )
+      )
+   )
+)
+
+(member* 'chips '((potato) (chips ((with) fish) (chips))))
