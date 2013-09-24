@@ -26,10 +26,13 @@
       (a l)
       (cond
          (  (null? l) #f)
+         (  (not (pair? l))
+            (eq? a l)
+         )
          (else
             (or
-               (eq?     a (car l))
-               (member? a (cdr l))
+               (member* a (car l))
+               (member* a (cdr l))
             )
          )
       )
@@ -37,3 +40,15 @@
 )
 
 (member* 'chips '((potato) (chips ((with) fish) (chips))))
+
+(member* 'fries '((potato) (chips ((with) fish) (chips))))
+
+(member* 'fish '((potato) (chips ((with) fish) (chips))))
+
+(member* 'tea '(coffee tea or milk))
+
+(member* 'poached '(fried eggs and scrambled eggs))
+
+(member* 'meat '(mashed potatoes and meat gravy))
+
+(member* 'liver '(bagels and lox))
