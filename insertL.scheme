@@ -22,18 +22,6 @@
 
 (insertL 'jalape√o 'and '(tacos tamales and salsa))
 
-(define atom?
-   (lambda
-      (x)
-      (not
-         (or
-            (pair? x)
-            (null? x)
-         )
-      )
-   )
-)
-
 (define insertL*
    (lambda
       (new old l)
@@ -41,7 +29,7 @@
          (  (null? l)
             (quote ())
          )
-         (  (atom? l) l)
+         (  (not (pair? l)) l)
          (  (eq? old (car l))
             (cons
                new
