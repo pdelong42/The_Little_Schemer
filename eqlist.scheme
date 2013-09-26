@@ -1,0 +1,9 @@
+(eqlist? '(strawberry ice cream) '(strawberry ice cream))
+
+(eqlist? '(strawberry ice cream) '(strawberry cream ice))
+
+(eqlist? '(banana ((split))) '((banana) (split)))
+
+(eqlist? '(beef ((sausage)) (and (soda))) '(beef ((salami)) (and (soda))))
+
+(eqlist? '(beef ((sausage)) (and (soda))) '(beef ((sausage)) (and (soda))))
