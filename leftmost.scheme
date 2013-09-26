@@ -1,0 +1,17 @@
+(define leftmost
+   (lambda
+      (l)
+      (cond
+         (  (not (pair? l)) l)
+         (else (leftmost (car l)))
+      )
+   )
+)
+
+(leftmost '((potato) (chips ((with) fish) (chips))))
+
+(leftmost '(((hot) (tuna (and))) cheese))
+
+(leftmost '(((() four)) 17 (seventeen)))
+
+(leftmost (quote ()))
