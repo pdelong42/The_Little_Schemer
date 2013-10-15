@@ -1,3 +1,10 @@
+(define eqlist?
+   (lambda
+      (a b)
+      
+   )
+)
+
 (eqlist? '(strawberry ice cream) '(strawberry ice cream))
 
 (eqlist? '(strawberry ice cream) '(strawberry cream ice))
