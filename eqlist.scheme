@@ -1,7 +1,31 @@
 (define eqlist?
    (lambda
       (a b)
-      
+      (cond
+         (  (eq? a b) #t)
+         (  (or
+               (null? a)
+               (null? b)
+            )
+            #f
+         )
+         (  (and
+               (pair? a)
+               (pair? b)
+            )
+            (and
+               (eqlist?
+                  (car a)
+                  (car b)
+               )
+               (eqlist?
+                  (cdr a)
+                  (cdr b)
+               )
+            )
+         )
+         (else #f)
+      )
    )
 )
 
