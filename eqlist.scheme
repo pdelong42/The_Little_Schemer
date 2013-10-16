@@ -1,8 +1,29 @@
+(define eqan?
+   (lambda
+      (a b)
+      (cond
+         (  (and
+               (number? a)
+               (number? b)
+            )
+            (eq a b)
+         )
+         (  (or
+               (number? a)
+               (number? b)
+            )
+            #f
+         )
+         (else (eq? a b))
+      )
+   )
+)
+
 (define eqlist?
    (lambda
       (a b)
       (cond
-         (  (eq? a b) #t)
+         (  (eqan? a b) #t)
          (  (or
                (null? a)
                (null? b)
