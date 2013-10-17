@@ -1,0 +1,9 @@
+(define
+   (lambda
+      (a b)
+      (cond
+         (  (eqan? a b) #t)
+         (else (eqlist? a b))
+      )
+   )
+)

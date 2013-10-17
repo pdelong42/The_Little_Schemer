@@ -51,5 +51,6 @@ insertR* (insertR.scheme)
 occur* (peano.scheme)
 insertL* (insertL.scheme)
 member* (member.scheme)
-leftmost (leftmost.scheme)
-eqlist? (eqlist.scheme)
+leftmost
+eqlist?
+equal?
