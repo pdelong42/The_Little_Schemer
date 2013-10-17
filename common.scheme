@@ -1,14 +1,18 @@
-(define atom?
+(define notpair? (lambda (x) (not (pair? x))))
+
+(define notatom?
    (lambda
       (x)
-      (not
-         (or
-            (pair? x)
-            (null? x)
-         )
+      (or
+         (pair? x)
+         (null? x)
       )
    )
 )
+
+(define    atom?    (lambda (x) (not (notatom? x))))
+
+(define notatom?car (lambda (x) (notatom? (car x))))
 
 (define eqan?
    (lambda

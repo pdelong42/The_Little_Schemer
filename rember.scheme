@@ -49,7 +49,7 @@
          (  (null? l)
             (quote ())
          )
-         (  (not (atom? (car l)))
+         (  (notatom?car l)
             (cons
                (rember* a (car l))
                (rember* a (cdr l))

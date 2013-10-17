@@ -1,3 +1,5 @@
+(load "common.scheme")
+
 (define member?
    (lambda
       (a lat)
@@ -26,7 +28,7 @@
       (a l)
       (cond
          (  (null? l) #f)
-         (  (not (pair? l))
+         (  (notpair? l)
             (eq? a l)
          )
          (else

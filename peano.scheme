@@ -353,7 +353,7 @@
       (a l)
       (cond
          (  (null? l) 0)
-         (  (not (atom? (car l)))
+         (  (notatom?car l)
             (o+
                (occur* a (car l))
                (occur* a (cdr l))

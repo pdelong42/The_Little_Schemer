@@ -1,8 +1,10 @@
+(load "common.scheme")
+
 (define leftmost
    (lambda
       (l)
       (cond
-         (  (not (pair? l)) l)
+         (  (notpair? l) l)
          (else (leftmost (car l)))
       )
    )

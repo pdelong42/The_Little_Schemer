@@ -33,7 +33,7 @@
          (  (null? l)
             (quote ())
          )
-         (  (atom? l) l)
+         (  (notpair? l) l)
          (  (eq? old (car l))
             (cons
                (          insertR* new old (car l))
