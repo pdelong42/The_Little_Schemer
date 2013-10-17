@@ -1,6 +1,6 @@
 Chapter 1:
 
-atom?
+atom? (common.scheme)
 
 Chapter 2:
 
@@ -29,6 +29,20 @@ o-
 addtup
 o*
 tup+
+gt
+lt
+eq
+power
+divide
+_length
+pick
+rempick
+no-nums
+all-nums
+eqan? (common.scheme)
+occur
+one?
+rempick
 
 Chapter 5:
 

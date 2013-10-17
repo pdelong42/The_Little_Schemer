@@ -1,3 +1,5 @@
+(load "common.scheme")
+
 (define insertR
    (lambda
       (new old lat)
@@ -23,18 +25,6 @@
 (insertR 'topping 'fudge '(ice cream with fudge for desert))
 
 (insertR 'jalape√o 'and '(tacos tamales and salsa))
-
-(define atom?
-   (lambda
-      (x)
-      (not
-         (or
-            (pair? x)
-            (null? x)
-         )
-      )
-   )
-)
 
 (define insertR*
    (lambda

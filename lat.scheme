@@ -1,16 +1,4 @@
-(define atom?
-   (lambda
-      (x)
-      (not
-         (or
-            (pair? x)
-            (null? x)
-         )
-      )
-   )
-)
-
-; definition of "atom?" from Chapter 1
+(load "common.scheme")
 
 (define lat?
    (lambda

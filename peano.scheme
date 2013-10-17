@@ -1,3 +1,5 @@
+(load "common.scheme")
+
 (define add1
    (lambda
       (n)
@@ -317,27 +319,6 @@
 
 (all-nums '(5 pears 6 prunes 9 dates))
 
-(define eqan?
-   (lambda
-      (a b)
-      (cond
-         (  (and
-               (number? a)
-               (number? b)
-            )
-            (eq a b)
-         )
-         (  (or
-               (number? a)
-               (number? b)
-            )
-            #f
-         )
-         (else (eq? a b))
-      )
-   )
-)
-
 (eqan? 3 5)
 
 (eqan? 10 10)
@@ -366,18 +347,6 @@
 (occur 'd '(a b a c a b))
 
 (occur 3 '(3.0 1 3 3 7))
-
-(define atom?
-   (lambda
-      (x)
-      (not
-         (or
-            (pair? x)
-            (null? x)
-         )
-      )
-   )
-)
 
 (define occur*
    (lambda
