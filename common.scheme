@@ -1,0 +1,32 @@
+(define atom?
+   (lambda
+      (x)
+      (not
+         (or
+            (pair? x)
+            (null? x)
+         )
+      )
+   )
+)
+
+(define eqan?
+   (lambda
+      (a b)
+      (cond
+         (  (and
+               (number? a)
+               (number? b)
+            )
+            (eq a b)
+         )
+         (  (or
+               (number? a)
+               (number? b)
+            )
+            #f
+         )
+         (else (eq? a b))
+      )
+   )
+)
