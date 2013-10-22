@@ -1,4 +1,4 @@
-(define
+(define equal?
    (lambda
       (a b)
       (cond
