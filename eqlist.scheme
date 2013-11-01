@@ -1,5 +1,16 @@
 (load "common.scheme")
 
+; just here for convenience - delete when done
+;(define equal?
+;   (lambda
+;      (a b)
+;      (cond
+;         (  (eqan? a b) #t)
+;         (else (eqlist? a b))
+;      )
+;   )
+;)
+
 (define eqlist?
    (lambda
       (a b)
