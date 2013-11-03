@@ -15,7 +15,12 @@
    (lambda
       (a b)
       (cond
-         (  (eqan? a b) #t)
+         (  (and
+               (null? a)
+               (null? b)
+            )
+            #t
+         )
          (  (or
                (null? a)
                (null? b)
@@ -23,8 +28,8 @@
             #f
          )
          (  (and
-               (pair? a)
-               (pair? b)
+               (pair? (car a))
+               (pair? (car b))
             )
             (and
                (eqlist?
@@ -37,7 +42,24 @@
                )
             )
          )
-         (else #f)
+         (  (or
+               (pair? (car a))
+               (pair? (car b))
+            )
+            #f
+         )
+         (else
+            (and
+               (eqan?
+                  (car a)
+                  (car b)
+               )
+               (eqlist?
+                  (cdr a)
+                  (cdr b)
+               )
+            )
+         )
       )
    )
 )
