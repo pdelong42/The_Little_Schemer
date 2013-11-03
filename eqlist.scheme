@@ -7,14 +7,14 @@
 ;      (a b)
 ;      (cond
 ;         (  (and
-;               (pair a)
-;               (pair b)
+;               (pair? a)
+;               (pair? b)
 ;            )
 ;            (eqlist? a b)
 ;         )
 ;         (  (or
-;               (pair a)
-;               (pair b)
+;               (pair? a)
+;               (pair? b)
 ;            )
 ;            #f
 ;         )
