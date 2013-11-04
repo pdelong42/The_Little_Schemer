@@ -1,28 +1,5 @@
 (load "common.scheme")
 
-; just here for convenience - delete when done
-;
-;(define equal?
-;   (lambda
-;      (a b)
-;      (cond
-;         (  (and
-;               (pair? a)
-;               (pair? b)
-;            )
-;            (eqlist? a b)
-;         )
-;         (  (or
-;               (pair? a)
-;               (pair? b)
-;            )
-;            #f
-;         )
-;         (else (eqan? a b))
-;      )
-;   )
-;)
-
 (define eqlist?
    (lambda
       (a b)
@@ -39,30 +16,9 @@
             )
             #f
          )
-         (  (and
-               (pair? (car a))
-               (pair? (car b))
-            )
-            (and
-               (eqlist?
-                  (car a)
-                  (car b)
-               )
-               (eqlist?
-                  (cdr a)
-                  (cdr b)
-               )
-            )
-         )
-         (  (or
-               (pair? (car a))
-               (pair? (car b))
-            )
-            #f
-         )
          (else
             (and
-               (eqan?
+               (equal?
                   (car a)
                   (car b)
                )
