@@ -48,6 +48,9 @@
    )
 )
 
+; this uses (eqlist? ...), which isn't defined yet
+; it doesn't fail thanks to lazy evaluation
+
 (define equal?
    (lambda
       (a b)
