@@ -14,10 +14,18 @@
 
 (define notatom?car (lambda (x) (notatom? (car x))))
 
-; this references 'eq', which isn't defined anywhere that's referenced from
-; here (it's in peano.scheme, but that isn't loaded here); the only reason it
-; doesn't fail in eqlist.scheme is due to lazy evaluation - there are no
-; numbers in those test cases;
+; repeated here from "peano.scheme"...
+
+(define eq
+   (lambda
+      (a b)
+      (cond
+         (  (lt a b) #f)
+         (  (gt a b) #f)
+         (else #t)
+      )
+   )
+)
 
 (define eqan?
    (lambda
