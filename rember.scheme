@@ -1,19 +1,39 @@
 (load "common.scheme")
 
+;(define rember 
+;   (lambda      
+;      (a lat)
+;      (cond
+;         (  (null? lat)
+;            (quote ())
+;         )
+;         (  (eq? a (car lat))
+;            (cdr lat)
+;         )
+;         (else
+;            (cons
+;               (car lat)
+;               (rember a (cdr lat))
+;            )
+;         )
+;      )
+;   )
+;)
+
 (define rember 
    (lambda      
-      (a lat)
+      (s l)
       (cond
-         (  (null? lat)
+         (  (null? l)
             (quote ())
          )
-         (  (eq? a (car lat))
-            (cdr lat)
+         (  (equal? s (car l))
+            (cdr l)
          )
          (else
             (cons
-               (car lat)
-               (rember a (cdr lat))
+               (car l)
+               (rember s (cdr l))
             )
          )
       )
