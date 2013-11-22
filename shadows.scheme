@@ -15,33 +15,54 @@
    )
 )
 
+(define 1st-sub-exp
+   (lambda
+      (aexp)
+      (car nexp)
+   )
+)
+
+(define operator
+   (lambda
+      (aexp)
+      (car (cdr nexp))
+   )
+)
+
+(define 2nd-sub-exp
+   (lambda
+      (aexp)
+      (car (cdr (cdr nexp)))
+   )
+)
+
 (define value
    (lambda
       (nexp)
       (cond
          (  (atom? nexp) nexp)
          (  (eq?
-               (car (cdr nexp))
+               (operator nexp)
                (quote +)
             )
             (+
-               (value (car nexp))
-               (value (car (cdr (cdr nexp))))
+               (value (1st-sub-exp nexp))
+               (value (2nd-sub-exp nexp))
             )
          )
          (  (eq?
-               (car (cdr nexp))
+               (operator nexp)
                (quote x)
             )
             (*
-               (value (car nexp))
-               (value (car (cdr (cdr nexp))))
+               (value (1st-sub-exp nexp))
+               (value (2nd-sub-exp nexp))
             )
          )
          (else
             (expt
-               (value (car nexp))
-               (value (car (cdr (cdr nexp))))
+               (value (1st-sub-exp nexp))
+               (value (2nd-sub-exp nexp))
             )
          )
       )
