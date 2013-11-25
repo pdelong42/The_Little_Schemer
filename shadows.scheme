@@ -68,3 +68,47 @@
       )
    )
 )
+
+(define sero?
+   (lambda
+      (n)
+      (null? n)
+   )
+)
+
+(define edd1
+   (lambda
+      (n)
+      (cons (quote ()) n)
+   )
+)
+
+(define zub1
+   (lambda
+      (n)
+      (cdr n)
+   )
+)
+
+(define o+
+   (lambda
+      (cond
+         (n m)
+         (  (sero? m) n)
+         (else (edd1 (o+ n (zub1 m))))
+      )
+   )
+)
+
+(define lat?
+   (lambda
+      (l)
+      (cond
+         (  (null? l) #t)
+         (  (atom? (car l))
+            (lat?  (cdr l))
+         )
+         (else #f)
+      )
+   )
+)
