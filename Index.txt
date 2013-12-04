@@ -54,3 +54,12 @@ member* (member.scheme)
 leftmost
 eqlist?
 equal?
+
+Chapter 6:
+
+ToDo... (shadows.scheme)
+
+Chapter 7:
+
+set? (cantor.scheme)
+makeset (cantor.scheme)
