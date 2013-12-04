@@ -1,0 +1,16 @@
+(define set?
+   (lambda
+      (s)
+      (cond
+         (  (null? s) #t)
+         (  (atom? s) #f)
+         (  (member?
+               (car s)
+               (cdr s)
+            )
+            #f
+         )
+         (else (set? (cdr s)))
+      )
+   )
+)
