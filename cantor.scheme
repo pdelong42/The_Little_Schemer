@@ -1,3 +1,5 @@
+
+
 (define set?
    (lambda
       (s)
@@ -11,6 +13,15 @@
             #f
          )
          (else (set? (cdr s)))
+      )
+   )
+)
+
+(define makeset
+   (lambda
+      (s)
+      (cond
+         (else)
       )
    )
 )
