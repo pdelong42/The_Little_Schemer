@@ -1,4 +1,4 @@
-
+# ToDo: include definitions for (member? ...) and (atom? ...)
 
 (define set?
    (lambda
