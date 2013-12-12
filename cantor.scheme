@@ -1,4 +1,7 @@
-# ToDo: include definitions for (member? ...) and (atom? ...)
+# ToDo:
+# - include definitions for (member? ...) and (atom? ...);
+# - rewrite (member? ...) to use (equal? ...) instead of (eq? ...), like the
+#   book says has been done (but hasn't been);
 
 (define set?
    (lambda
@@ -21,7 +24,21 @@
    (lambda
       (s)
       (cond
-         (else)
+         (  (null? s)
+            (quote ())
+         )
+         (  (member?
+               (car s)
+               (cdr s)
+            )
+            (makeset (cdr s))
+         )
+         (else
+            (cons
+               (car s)
+               (makeset (cdr s))
+            )
+         )
       )
    )
 )
