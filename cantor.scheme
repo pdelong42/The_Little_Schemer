@@ -1,5 +1,4 @@
 ; ToDo:
-; - include definitions for (member? ...) and (atom? ...);
 ; - rewrite (member? ...) to use (equal? ...) instead of (eq? ...), like the
 ;   book says has been done (but hasn't been);
 
