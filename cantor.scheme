@@ -1,7 +1,3 @@
-; ToDo:
-; - rewrite (member? ...) to use (equal? ...) instead of (eq? ...), like the
-;   book says has been done (but hasn't been);
-
 (load "common.scheme")
 
 (define set?
