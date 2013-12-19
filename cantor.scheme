@@ -24,16 +24,15 @@
          (  (null? s)
             (quote ())
          )
-         (  (member?
-               (car s)
-               (cdr s)
-            )
-            (makeset (cdr s))
-         )
          (else
             (cons
                (car s)
-               (makeset (cdr s))
+               (makeset
+                  (multirember
+                     (car s)
+                     (cdr s)
+                  )
+               )
             )
          )
       )
