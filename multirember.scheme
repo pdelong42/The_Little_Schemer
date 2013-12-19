@@ -1,22 +1,4 @@
-(define multirember
-   (lambda      
-      (a lat)
-      (cond
-         (  (null? lat)
-            (quote ())
-         )
-         (  (eq? a (car lat))
-            (multirember a (cdr lat))
-         )
-         (else
-            (cons
-               (car lat)
-               (multirember a (cdr lat))
-            )
-         )
-      )
-   )
-)
+(load "common.scheme")
 
 (multirember 'mint '(lamb chops and mint jelly))
 
