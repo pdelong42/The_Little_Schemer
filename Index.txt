@@ -5,7 +5,7 @@ atom? (common.scheme)
 Chapter 2:
 
 lat?
-member?
+member? (common.scheme)
 
 Chapter 3:
 
@@ -15,7 +15,7 @@ insertR
 insertL
 subst
 subst2
-multirember
+multirember (common.scheme)
 multiinsertR
 multiinsertL
 multisubst
@@ -31,7 +31,7 @@ o*
 tup+
 gt
 lt
-eq
+eq (common.scheme)
 power
 divide
 _length
@@ -53,7 +53,7 @@ insertL* (insertL.scheme)
 member* (member.scheme)
 leftmost
 eqlist?
-equal?
+equal? (common.scheme)
 
 Chapter 6:
 
