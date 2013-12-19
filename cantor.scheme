@@ -1,7 +1,9 @@
-# ToDo:
-# - include definitions for (member? ...) and (atom? ...);
-# - rewrite (member? ...) to use (equal? ...) instead of (eq? ...), like the
-#   book says has been done (but hasn't been);
+; ToDo:
+; - include definitions for (member? ...) and (atom? ...);
+; - rewrite (member? ...) to use (equal? ...) instead of (eq? ...), like the
+;   book says has been done (but hasn't been);
+
+(load "common.scheme")
 
 (define set?
    (lambda
@@ -42,3 +44,5 @@
       )
    )
 )
+
+(makeset '(apple peach pear peach plum apple lemon peach))
