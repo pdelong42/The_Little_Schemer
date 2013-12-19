@@ -40,3 +40,10 @@
 (makeset '(apple peach pear peach plum apple lemon peach))
 
 (makeset '(apple 3 pear 4 9 apple 3 4))
+
+(define subset?
+   (lambda
+      (s1 s2)
+      ...
+   )
+)
