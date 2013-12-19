@@ -27,11 +27,9 @@
          (else
             (cons
                (car s)
-               (makeset
-                  (multirember
-                     (car s)
-                     (cdr s)
-                  )
+               (multirember
+                  (car s)
+                  (makeset (cdr s))
                )
             )
          )
