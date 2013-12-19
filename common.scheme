@@ -71,3 +71,18 @@
       )
    )
 )
+
+(define member?
+   (lambda
+      (a lat)
+      (cond
+         (  (null? lat) #f)
+         (else
+            (or
+               (equal?  a (car lat))
+               (member? a (cdr lat))
+            )
+         )
+      )
+   )
+)
