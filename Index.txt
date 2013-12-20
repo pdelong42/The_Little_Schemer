@@ -59,7 +59,8 @@ Chapter 6:
 
 ToDo... (shadows.scheme)
 
-Chapter 7:
+Chapter 7: (cantor.scheme)
 
-set? (cantor.scheme)
-makeset (cantor.scheme)
+set?
+makeset
+subset?
