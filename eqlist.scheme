@@ -1,37 +1,5 @@
 (load "common.scheme")
 
-(define eqlist?
-   (lambda
-      (a b)
-      (cond
-         (  (and
-               (null? a)
-               (null? b)
-            )
-            #t
-         )
-         (  (or
-               (null? a)
-               (null? b)
-            )
-            #f
-         )
-         (else
-            (and
-               (equal?
-                  (car a)
-                  (car b)
-               )
-               (eqlist?
-                  (cdr a)
-                  (cdr b)
-               )
-            )
-         )
-      )
-   )
-)
-
 (eqlist? '(strawberry ice cream) '(strawberry ice cream))
 
 (eqlist? '(strawberry ice cream) '(strawberry cream ice))
