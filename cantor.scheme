@@ -44,6 +44,16 @@
 (define subset?
    (lambda
       (s1 s2)
-      ...
+      (cond
+         (  (null? s1) #t)
+         (  (member? (car s1) s2)
+            (subset? (cdr s1) s2)
+         )
+         (else #f)
+      )
    )
 )
+
+(subset? '(5 chicken wings) '(5 hamburgers 2 pieces fried chicken and light duckling wings))
+
+(subset? '(4 pounds of horseradish) '(four pounds chicken and 5 ounces horseradish))
