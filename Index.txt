@@ -22,15 +22,15 @@ multisubst
 
 Chapter 4 (peano.scheme):
 
-add1
-sub1
+add1 (common.scheme)
+sub1 (common.scheme)
 o+
 o-
 addtup
 o*
 tup+
-gt
-lt
+gt (common.scheme)
+lt (common.scheme)
 eq (common.scheme)
 power
 divide
