@@ -52,7 +52,7 @@ occur* (peano.scheme)
 insertL* (insertL.scheme)
 member* (member.scheme)
 leftmost
-eqlist?
+eqlist? (common.scheme)
 equal? (common.scheme)
 
 Chapter 6:
