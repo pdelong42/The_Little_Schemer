@@ -92,8 +92,37 @@
    )
 )
 
-; this uses (eqlist? ...), which isn't defined yet
-; it doesn't fail thanks to lazy evaluation
+(define eqlist?
+   (lambda
+      (a b)
+      (cond
+         (  (and
+               (null? a)
+               (null? b)
+            )
+            #t
+         )
+         (  (or
+               (null? a)
+               (null? b)
+            )
+            #f
+         )
+         (else
+            (and
+               (equal?
+                  (car a)
+                  (car b)
+               )
+               (eqlist?
+                  (cdr a)
+                  (cdr b)
+               )
+            )
+         )
+      )
+   )
+)
 
 (define equal?
    (lambda
