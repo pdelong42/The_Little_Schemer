@@ -94,7 +94,7 @@
          (  (null? lat)
             (quote ())
          )
-         (  (equal? a (car lat))
+         (  (eq? a (car lat))
             (multirember a (cdr lat))
          )
          (else
