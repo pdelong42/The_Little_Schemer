@@ -92,15 +92,30 @@
 
 (eqset? '(6 large chickens with wings) '(6 chickens with large wings))
 
-;(define intersect?
-;   (lambda
-;      (s1 s2)
-;      (cond
-;      )
-;   )
-;)
+(define intersect?
+   (lambda
+      (s1 s2)
+      (cond
+         (  (or
+               (null? s1)
+               (null? s2)
+            )
+            #f
+         )
+         ;(  )
+         (else
+            (or
+               (intersect? s1 (cdr s2))
+               (intersect? s2 (cdr s1))
+            )
+         )
+      )
+   )
+)
 
-;(intersect? '(stewed tomatoes and macaroni) '(macaroni and cheese))
+(intersect? '(stewed tomatoes and macaroni) '(macaroni and cheese))
+
+(intersect? '(stewed tomatoes or potatoes) '(macaroni and cheese))
 
 ;(define intersect
 ;   (lambda
