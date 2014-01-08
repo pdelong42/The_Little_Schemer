@@ -64,19 +64,33 @@
 
 (subset? '(a) '(b))
 
+(subset? '(a) '(a))
+
 (subset? '(5 chicken wings) '(5 hamburgers 2 pieces fried chicken and light duckling wings))
 
 (subset? '(4 pounds of horseradish) '(four pounds chicken and 5 ounces horseradish))
 
-;(define eqset?
-;   (lambda
-;      (s1 s2)
-;      (cond
-;      )
-;   )
-;)
+(define eqset?
+   (lambda
+      (s1 s2)
+      (and
+         (subset? s1 s2)
+         (subset? s2 s1)
+      )
+   )
+)
 
-;(eqset? '(6 large chickens with wings) '(6 chickens with large wings))
+(eqset? '() '())
+
+(eqset? '(a) '(b))
+
+(eqset? '(a) '(a))
+
+(eqset? '() '(a))
+
+(eqset? '(a) '(a b))
+
+(eqset? '(6 large chickens with wings) '(6 chickens with large wings))
 
 ;(define intersect?
 ;   (lambda
