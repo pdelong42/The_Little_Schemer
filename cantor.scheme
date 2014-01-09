@@ -96,24 +96,9 @@
    (lambda
       (s1 s2)
       (cond
-         (  (or
-               (null? s1)
-               (null? s2)
-            )
-            #f
-         )
-         (  (or
-               (member? (car s1) s2)
-               (member? (car s2) s1)
-            )
-            #t
-         )
-         (else
-            (or
-               (intersect? s1 (cdr s2))
-               (intersect? s2 (cdr s1))
-            )
-         )
+         (  (null? s1) #f)
+         (  (member? (car s1) s2) #t)
+         (else (intersect? (cdr s1) s2))
       )
    )
 )
