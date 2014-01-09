@@ -139,6 +139,12 @@
    )
 )
 
+(intersect '() '())
+
+(intersect '(a b c) '(d e f))
+
+(intersect '(a b c d) '(c d e f))
+
 (intersect '(stewed tomatoes and macaroni) '(macaroni and cheese))
 
 ;(define union
