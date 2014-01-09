@@ -119,13 +119,27 @@
 
 (intersect? '(stewed tomatoes or potatoes) '(macaroni and cheese))
 
-;(define intersect
-;   (lambda
-;      (s1 s2)
-;      (cond
-;      )
-;   )
-;)
+(define intersect
+   (lambda
+      (s1 s2)
+      (cond
+         (  (null? s1)
+            (quote ())
+         )
+         (  (member? (car s1) s2)
+            (makeset
+               (cons
+                  (car s1)
+                  (intersect (cdr s1) s2)
+               )
+            )
+         )
+         (else (intersect (cdr s1) s2))
+      )
+   )
+)
+
+(intersect '(stewed tomatoes and macaroni) '(macaroni and cheese))
 
 ;(define union
 ;   (lambda
