@@ -150,12 +150,13 @@
       (s1 s2)
       (cond
          (  (null? s1) s2)
+         (  (member? (car s1) s2)
+            (union   (cdr s1) s2)
+         )
          (else
-            (makeset
-               (cons
-                  (car s1)
-                  (union (cdr s1) s2)
-               )
+            (cons
+               (car s1)
+               (union (cdr s1) s2)
             )
          )
       )
