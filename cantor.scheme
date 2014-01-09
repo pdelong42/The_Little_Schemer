@@ -102,7 +102,12 @@
             )
             #f
          )
-         ;(  )
+         (  (or
+               (member? (car s1) s2)
+               (member? (car s2) s1)
+            )
+            #t
+         )
          (else
             (or
                (intersect? s1 (cdr s2))
@@ -112,6 +117,14 @@
       )
    )
 )
+
+(intersect? '() '())
+
+(intersect? '(a) '(b))
+
+(intersect? '(a) '(a))
+
+(intersect? '(a b) '(a c))
 
 (intersect? '(stewed tomatoes and macaroni) '(macaroni and cheese))
 
