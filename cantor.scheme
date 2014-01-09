@@ -163,4 +163,10 @@
    )
 )
 
+(union '() '())
+
+(union '(a b c) '(d e f))
+
+(union '(a b c d) '(c d e f))
+
 (union '(stewed tomatoes and macaroni casserole) '(macaroni and cheese))
