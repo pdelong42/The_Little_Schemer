@@ -145,10 +145,21 @@
 
 (intersect '(stewed tomatoes and macaroni) '(macaroni and cheese))
 
-;(define union
-;   (lambda
-;      (s1 s2)
-;      (cond
-;      )
-;   )
-;)
+(define union
+   (lambda
+      (s1 s2)
+      (cond
+         (  (null? s1) s2)
+         (else
+            (makeset
+               (cons
+                  (car s1)
+                  (union (cdr s1) s2)
+               )
+            )
+         )
+      )
+   )
+)
+
+(union '(stewed tomatoes and macaroni casserole) '(macaroni and cheese))
