@@ -170,3 +170,25 @@
 (union '(a b c d) '(c d e f))
 
 (union '(stewed tomatoes and macaroni casserole) '(macaroni and cheese))
+
+(define differ
+   (lambda
+      (s1 s2)
+      (cond
+         (  (null? s1)
+            (quote ())
+         )
+         (  (member? (car s1) s2)
+            (differ  (cdr s1) s2)
+         )
+         (else
+            (cons
+               (car s1)
+               (differ (cdr s1) s2)
+            )
+         )
+      )
+   )
+)
+
+(differ '(stewed tomatoes and macaroni casserole) '(macaroni and cheese))
