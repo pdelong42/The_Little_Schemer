@@ -192,3 +192,13 @@
 )
 
 (differ '(stewed tomatoes and macaroni casserole) '(macaroni and cheese))
+
+(define intersectall
+   (lambda
+      (ls)
+      (cond (else ()))
+   )
+)
+
+
+(intersectall '((a b c) (c a d e) (e f g h a b)))
