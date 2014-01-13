@@ -196,9 +196,18 @@
 (define intersectall
    (lambda
       (ls)
-      (cond (else ()))
+      (cond
+         (  (null? (cdr ls))
+            (car ls)
+         )
+         (else
+            (intersect
+               (car ls)
+               (intersectall (cdr ls))
+            )
+         )
+      )
    )
 )
-
 
 (intersectall '((a b c) (c a d e) (e f g h a b)))
