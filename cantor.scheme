@@ -211,3 +211,34 @@
 )
 
 (intersectall '((a b c) (c a d e) (e f g h a b)))
+
+(define a-pair?
+   (lambda
+      (x)
+      (cond
+         (  (atom? x) #f)
+         (  (null? x) #f)
+         (  (null? (cdr x)) #f)
+         (  (null? (cdr (cdr x))) #t)
+         (else #f)
+      )
+   )
+)
+
+(a-pair? '(pear pear))
+
+(a-pair? '(3 7))
+
+(a-pair? '((2) (pair)))
+
+(a-pair? '(full (house)))
+
+(a-pair? 'a)
+
+(a-pair? '())
+
+(a-pair? '(a))
+
+(a-pair? '(a b c))
+
+(a-pair? '(() x))
