@@ -242,3 +242,40 @@
 (a-pair? '(a b c))
 
 (a-pair? '(() x))
+
+(define first
+   (lambda
+      (p)
+      (car p)
+   )
+)
+
+(define second
+   (lambda
+      (p)
+      (car (cdr p)))
+   )
+)
+
+(define third
+   (lambda
+      (p)
+      (car (cdr (cdr p)))
+   )
+)
+
+(define build
+   (lambda
+      (s1 s2)
+      (cons s1 (cons s2 (quote ())))
+   )
+)
+
+; ToDo: write tests for these four functions
+
+; use (set? ...) and (firsts ...)
+;(define fun?
+;   (lambda
+;      (x)
+;   )
+;)
