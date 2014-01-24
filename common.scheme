@@ -179,3 +179,20 @@
       )
    )
 )
+
+(define firsts
+   (lambda
+      (lst)
+      (cond
+         (  (null? lst)
+            (quote ())
+         )
+         (else
+            (cons
+               (car    (car lst))
+               (firsts (cdr lst))
+            )
+         )
+      )
+   )
+)

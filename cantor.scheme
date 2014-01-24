@@ -250,12 +250,18 @@
    )
 )
 
+(first '(a))
+
+(first '(a b c))
+
 (define second
    (lambda
       (p)
       (car (cdr p)))
    )
 )
+
+(second '(a b c))
 
 (define third
    (lambda
@@ -264,6 +270,8 @@
    )
 )
 
+(third '(a b c))
+
 (define build
    (lambda
       (s1 s2)
@@ -271,11 +279,19 @@
    )
 )
 
-; ToDo: write tests for these four functions
+(build 'a 'b)
 
-; use (set? ...) and (firsts ...)
-;(define fun?
-;   (lambda
-;      (x)
-;   )
-;)
+(build 'a ())
+
+(define fun?
+   (lambda
+      (x)
+       (set? (firsts x))
+   )
+)
+
+(fun? '((4 3) (4 2) (7 6) (6 2) (3 4)))
+
+(fun? '((8 3) (4 2) (7 6) (6 2) (3 4)))
+
+(fun? '((d 4) (b 0) (b 9) (e 5) (g 4)))
