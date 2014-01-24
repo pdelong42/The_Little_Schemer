@@ -295,3 +295,25 @@
 (fun? '((8 3) (4 2) (7 6) (6 2) (3 4)))
 
 (fun? '((d 4) (b 0) (b 9) (e 5) (g 4)))
+
+(define revrel
+   (lambda
+      (x)
+      (cond
+         (  (null? x)
+            (quote ())
+         )
+         (else
+            (cons
+               (build
+                  (second (car x))
+                  (first  (car x))
+               )
+               (revrel (cdr x))
+            )
+         )
+      )
+   )
+)
+
+(revrel '((8 a) (pumpkin pie) (got sick)))
