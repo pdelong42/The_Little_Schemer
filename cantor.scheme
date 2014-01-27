@@ -334,4 +334,4 @@
 
 (fullfun? '((grape raisin) (plum prune) (stewed prune)))
 
-(fun? '((grape raisin) (plum prune) (stewed grape)))
+(fullfun? '((grape raisin) (plum prune) (stewed grape)))
