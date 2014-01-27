@@ -325,13 +325,15 @@
 
 (revrel '((8 a) (pumpkin pie) (got sick)))
 
-(define fullfun?
+(define one-to-one?
    (lambda
       (x)
       (fun? (revrel x))
    )
 )
 
-(fullfun? '((grape raisin) (plum prune) (stewed prune)))
+(one-to-one? '((grape raisin) (plum prune) (stewed prune)))
 
-(fullfun? '((grape raisin) (plum prune) (stewed grape)))
+(one-to-one? '((grape raisin) (plum prune) (stewed grape)))
+
+(one-to-one? '((chocolate chip) (doughy cookie)))
