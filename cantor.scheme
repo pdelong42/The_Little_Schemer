@@ -286,7 +286,7 @@
 (define fun?
    (lambda
       (x)
-       (set? (firsts x))
+      (set? (firsts x))
    )
 )
 
@@ -324,3 +324,14 @@
 )
 
 (revrel '((8 a) (pumpkin pie) (got sick)))
+
+(define fullfun?
+   (lambda
+      (x)
+      (set? (firsts (revrel x)))
+   )
+)
+
+(fullfun? '((grape raisin) (plum prune) (stewed prune)))
+
+(fun? '((grape raisin) (plum prune) (stewed grape)))
