@@ -328,7 +328,7 @@
 (define fullfun?
    (lambda
       (x)
-      (set? (firsts (revrel x)))
+      (fun? (revrel x))
    )
 )
 
