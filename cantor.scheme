@@ -296,6 +296,16 @@
 
 (fun? '((d 4) (b 0) (b 9) (e 5) (g 4)))
 
+(define revpair
+   (lambda
+      (x)
+      (build
+         (second x)
+         (first  x)
+      )
+   )
+)
+
 (define revrel
    (lambda
       (x)
@@ -305,11 +315,8 @@
          )
          (else
             (cons
-               (build
-                  (second (car x))
-                  (first  (car x))
-               )
-               (revrel (cdr x))
+               (revpair (car x))
+               (revrel  (cdr x))
             )
          )
       )
