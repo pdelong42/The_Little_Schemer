@@ -111,3 +111,27 @@
 (rember* 'c '(a b a c a b))
 
 (rember* 'd '(a b a c a b))
+
+(define rember-f
+   (lambda
+      (test? a l)
+      (cond
+         (  (null? l)
+            (quote ())
+         )
+         (  (test? a (car l))
+            (cdr l)
+         )
+         (else
+            (cons
+               (car l)
+               (rember-f test? a (cdr l))
+            )
+         )
+      )
+   )
+)
+
+(rember-f eq? 'jelly '(jelly beans are good))
+
+(rember-f equal? '(pop corn) '(lemonade (pop corn) and (cake)))
