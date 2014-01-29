@@ -64,3 +64,22 @@ Chapter 7: (cantor.scheme)
 set?
 makeset
 subset?
+eqset?
+intersect?
+intersect
+union
+differ
+intersectall
+a-pair?
+first
+second
+third
+build
+fun?
+revpair
+revrel
+one-to-one
+
+Chapter 8:
+
+rember-f (rember.scheme)
