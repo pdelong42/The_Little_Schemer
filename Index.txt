@@ -84,3 +84,4 @@ Chapter 8:
 
 rember-f (rember.scheme)
 insertL-f (insertL.scheme)
+insertR-f (insertR.scheme)

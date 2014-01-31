@@ -55,3 +55,34 @@
 (insertR* 'jalape√o 'and '(tacos tamales and salsa))
 
 (insertR* 'roast 'chuck '((how much (wood)) could ((a (wood) chuck)) (((chuck))) (if (a) ((wood chuck))) could chuck wood))
+
+(define insertR-f
+   (lambda
+      (test?)
+      (lambda
+         (new old lat)
+         (cond
+            (  (null? lat)
+               (quote ())
+            )
+            (else
+               (cons
+                  (car lat)
+                  (cond
+                     (  (test? old (car lat))
+                        (cons  new (cdr lat))
+                     )
+                     (else ((insertR-f test?) new old (cdr lat)))
+                  )
+               )
+            )
+         )
+      )
+   )
+)
+
+(define insertR-eq? (insertR-f eq?))
+
+(insertR-eq? 'topping 'fudge '(ice cream with fudge for desert))
+
+(insertR-eq? 'jalape√o 'and '(tacos tamales and salsa))
