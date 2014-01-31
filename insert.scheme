@@ -1,0 +1,50 @@
+(load "common.scheme")
+
+(define insert-g
+   (lambda
+      (seq)
+      (lambda
+         (new old lat)
+         (cond
+            (  (null? lat)
+               (quote ())
+            )
+            (  (eq?     old (car lat))
+               (seq new old (cdr lat))
+            )
+            (else
+               (cons
+                  (car lat)
+                  ((insert-g seq) new old (cdr lat))
+               )
+            )
+         )
+      )
+   )
+)
+
+(define seqL
+   (lambda
+      (new old l)
+      (cons new (cons old l))
+   )
+)
+
+(define seqR
+   (lambda
+      (new old l)
+      (cons old (cons new l))
+   )
+)
+
+(define insertL (insert-g seqL))
+
+(define insertR (insert-g seqR))
+
+(insertL 'topping 'fudge '(ice cream with fudge for desert))
+
+(insertR 'topping 'fudge '(ice cream with fudge for desert))
+
+(insertL 'jalape√o 'and '(tacos tamales and salsa))
+
+(insertR 'jalape√o 'and '(tacos tamales and salsa))
