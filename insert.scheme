@@ -41,6 +41,15 @@
    )
 )
 
+(define subst
+   (insert-g
+      (lambda
+         (new  old l)
+         (cons new l)
+      )
+   )
+)
+
 (insertL 'topping 'fudge '(ice cream with fudge for desert))
 
 (insertR 'topping 'fudge '(ice cream with fudge for desert))
@@ -48,3 +57,7 @@
 (insertL 'jalape√o 'and '(tacos tamales and salsa))
 
 (insertR 'jalape√o 'and '(tacos tamales and salsa))
+
+(subst 'topping 'fudge '(ice cream with fudge for desert))
+
+(subst 'jalape√o 'and '(tacos tamales and salsa))
