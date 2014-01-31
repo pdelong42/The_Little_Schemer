@@ -52,3 +52,34 @@
 )
 
 (insertL* 'pecker 'chuck '((how much (wood)) could ((a (wood) chuck)) (((chuck))) (if (a) ((wood chuck))) could chuck wood))
+
+(define insertL-f
+   (lambda
+      (test?)
+      (lambda
+         (new old lat)
+         (cond
+            (  (null? lat)
+               (quote ())
+            )
+            (  (test? old (car lat))
+               (cons new lat)
+            )
+            (else
+               (cons
+                  (car lat)
+                  ((insertL-f test?) new old (cdr lat))
+               )
+            )
+         )
+      )
+   )
+)
+
+(define insertL-eq? (insertL-f eq?))
+
+(insertL-eq? 'topping 'fudge '(ice cream with fudge for desert))
+
+(insertL-eq? 'jalape√o 'and '(tacos tamales and salsa))
+
+;((insertL-f equal?) 'pecker 'chuck '((how much (wood)) could ((a (wood) chuck)) (((chuck))) (if (a) ((wood chuck))) could chuck wood))
