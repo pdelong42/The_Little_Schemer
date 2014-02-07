@@ -22,4 +22,4 @@
 
 (multirember 'd '(a b a c a b))
 
-((multirember-f eq?) 'tuna '(shrimp salad tuna salad and tuna))
+(multirember-eq? 'tuna '(shrimp salad tuna salad and tuna))

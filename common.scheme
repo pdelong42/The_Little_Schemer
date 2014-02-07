@@ -185,6 +185,8 @@
 
 (define multirember (multirember-f equal?))
 
+(define multirember-eq? (multirember-f eq?))
+
 (define firsts
    (lambda
       (lst)
