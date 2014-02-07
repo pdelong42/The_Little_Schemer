@@ -21,3 +21,5 @@
 (multirember 'c '(a b a c a b))
 
 (multirember 'd '(a b a c a b))
+
+((multirember-f eq?) 'tuna '(shrimp salad tuna salad and tuna))

@@ -160,25 +160,30 @@
    )
 )
 
-(define multirember
-   (lambda      
-      (a lat)
-      (cond
-         (  (null? lat)
-            (quote ())
-         )
-         (  (equal? a (car lat))
-            (multirember a (cdr lat))
-         )
-         (else
-            (cons
-               (car lat)
-               (multirember a (cdr lat))
+(define multirember-f
+   (lambda
+      (test?)
+      (lambda
+         (a lat)
+         (cond
+            (  (null? lat)
+               (quote ())
+            )
+            (  (test? a (car lat))
+               ((multirember-f test?) a (cdr lat))
+            )
+            (else
+               (cons
+                  (car lat)
+                  ((multirember-f test?) a (cdr lat))
+               )
             )
          )
       )
    )
 )
+
+(define multirember (multirember-f equal?))
 
 (define firsts
    (lambda
