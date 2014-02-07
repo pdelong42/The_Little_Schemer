@@ -17,6 +17,12 @@
    )
 )
 
+(numbered? '1)
+
+(numbered? '(3 + (4 ^ 5)))
+
+(numbered? '(2 x sausage))
+
 (define 1st-sub-exp
    (lambda
       (aexp)
@@ -85,6 +91,12 @@
 (value '13)
 
 (value '(1 + 3))
+
+(value '(1 + (3 ^ 4)))
+
+(value 'cookie)
+
+(value '(1 + (3 x 4)))
 
 (define sero?
    (lambda
