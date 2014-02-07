@@ -55,31 +55,15 @@
    )
 )
 
+(atom-to-function (operator '(+ 5 3)))
+
 (define value
    (lambda
       (nexp)
       (cond
          (  (atom? nexp) nexp)
-         (  (eq?
-               (operator nexp)
-               (quote +)
-            )
-            (+
-               (value (1st-sub-exp nexp))
-               (value (2nd-sub-exp nexp))
-            )
-         )
-         (  (eq?
-               (operator nexp)
-               (quote x)
-            )
-            (*
-               (value (1st-sub-exp nexp))
-               (value (2nd-sub-exp nexp))
-            )
-         )
          (else
-            (expt
+            (  (atom-to-function (operator nexp))
                (value (1st-sub-exp nexp))
                (value (2nd-sub-exp nexp))
             )
