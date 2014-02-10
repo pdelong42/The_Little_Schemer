@@ -23,3 +23,7 @@
 (multirember 'd '(a b a c a b))
 
 (multirember-eq? 'tuna '(shrimp salad tuna salad and tuna))
+
+(define eq?-tuna (eq?-c (quote tuna)))
+
+(multiremberT eq?-tuna '(shrimp salad tuna salad and tuna))

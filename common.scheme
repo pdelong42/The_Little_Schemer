@@ -183,9 +183,39 @@
    )
 )
 
+(define multiremberT
+   (lambda
+      (test? lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (test? (car lat))
+            (multiremberT test? (cdr lat))
+         )
+         (else
+            (cons
+               (car lat)
+               (multiremberT test? (cdr lat))
+            )
+         )
+      )
+   )
+)
+
 (define multirember (multirember-f equal?))
 
 (define multirember-eq? (multirember-f eq?))
+
+(define eq?-c
+   (lambda
+      (a)
+      (lambda
+         (x)
+         (eq? x a)
+      )
+   )
+)
 
 (define firsts
    (lambda
