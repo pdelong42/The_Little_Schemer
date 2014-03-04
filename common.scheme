@@ -267,33 +267,3 @@
       )
    )
 )
-
-(define a-friend
-   (lambda
-      (x y)
-      (null? y)
-   )
-)
-
-(multirember&co 'tuna '() a-friend)
-
-(define new-friend
-   (lambda
-      (newlat seen)
-      (col newlat (cons (car lat) seen))
-   )
-)
-
-(multirember&co 'tuna '(tuna) a-friend)
-
-(define latest-friend
-   (lambda
-      (newlat seen)
-      (col (cons (car lat) newlat) seen)
-   )
-)
-
-(multirember&co 'tuna '(and tuna) a-friend)
-;(multirember&co 'tuna '(tuna) latest-friend)
-;(multirember&co 'tuna '() new-friend)
-;(latest-friend '() '(tuna))

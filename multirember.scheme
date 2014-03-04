@@ -27,3 +27,39 @@
 (define eq?-tuna (eq?-c (quote tuna)))
 
 (multiremberT eq?-tuna '(shrimp salad tuna salad and tuna))
+
+(define a-friend
+   (lambda
+      (x y)
+      (null? y)
+   )
+)
+
+(multirember&co 'tuna '() a-friend)
+
+(define new-friend
+   (lambda
+      (newlat seen)
+      (col newlat (cons (car lat) seen))
+   )
+)
+
+(multirember&co 'tuna '(tuna) a-friend)
+
+(define latest-friend
+   (lambda
+      (newlat seen)
+      (col (cons (car lat) newlat) seen)
+   )
+)
+
+(multirember&co 'tuna '(and tuna) a-friend)
+
+(define last-friend
+   (lambda
+      (x y)
+      (length x)
+   )
+)
+
+(multirember&co 'tuna '(strawberries tuna and swordfish) last-friend)
