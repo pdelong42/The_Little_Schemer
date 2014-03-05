@@ -37,23 +37,40 @@
 
 (multirember&co 'tuna '() a-friend)
 
-(define new-friend
-   (lambda
-      (newlat seen)
-      (col newlat (cons (car lat) seen))
-   )
-)
+;(define new-friend
+;   (lambda
+;      (newlat seen)
+;      (a-friend newlat (cons (quote tuna) seen))
+;   )
+;)
 
 (multirember&co 'tuna '(tuna) a-friend)
 
-(define latest-friend
-   (lambda
-      (newlat seen)
-      (col (cons (car lat) newlat) seen)
-   )
-)
+;(define latest-friend
+;   (lambda
+;      (newlat seen)
+;      (a-friend (cons (quote and) newlat) seen)
+;   )
+;)
+
+;(define old-friend
+;   (lambda
+;      (newlat seen)
+;      (latest-friend newlat (cons (quote tuna) seen))
+;   )
+;)
+
+; I manually constructed a stack trace here, as an illustration to help myself
+; visualize what's going on...
 
 (multirember&co 'tuna '(and tuna) a-friend)
+;(multirember&co 'tuna '(tuna) latest-friend)
+;(multirember&co 'tuna '() old-friend)
+;(old-friend '() '())
+;(latest-friend '() '(tuna))
+;(a-friend '(and) '(tuna))
+;(null? '(tuna))
+;#f
 
 (define last-friend
    (lambda
@@ -62,4 +79,44 @@
    )
 )
 
+;(define branch2
+;   (lambda
+;      (newlat seen)
+;      (last-friend (cons (quote strawberries) newlat) seen)
+;   )
+;)
+
+;(define branch1
+;   (lambda
+;      (newlat seen)
+;      (branch2 newlat (cons (quote tuna) seen))
+;   )
+;)
+
+;(define branch2.1
+;   (lambda
+;      (newlat seen)
+;      (branch1 (cons (quote and) newlat) seen)
+;   )
+;)
+
+;(define branch2.2
+;   (lambda
+;      (newlat seen)
+;      (branch2.1 (cons (quote swordfish) newlat) seen)
+;   )
+;)
+
+; another fake stack trace below
+
 (multirember&co 'tuna '(strawberries tuna and swordfish) last-friend)
+;(multirember&co 'tuna '(tuna and swordfish) branch2)
+;(multirember&co 'tuna '(and swordfish) branch1)
+;(multirember&co 'tuna '(swordfish) branch2.1)
+;(multirember&co 'tuna '() branch2.2)
+;(branch2.2 '() '())
+;(branch2.1 '(swordfish) '())
+;(branch1 '(and swordfish) '())
+;(branch2 '(and swordfish) '(tuna))
+;(last-friend '(strawberries and swordfish) '(tuna))
+;3
