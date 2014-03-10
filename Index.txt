@@ -16,8 +16,8 @@ insertL
 subst
 subst2
 multirember (common.scheme)
-multiinsertR
-multiinsertL
+multiinsertR (multiinsert.scheme)
+multiinsertL (multiinsert.scheme)
 multisubst
 
 Chapter 4 (peano.scheme):
