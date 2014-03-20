@@ -55,3 +55,34 @@
 (multiinsertL '(8oz) 'cup '(coffee cup tea cup and hick cup))
 
 (multiinsertL '(low sodium) 'sauce '(soy sauce and tomato sauce))
+
+(define multiinsertLR
+   (lambda
+      (new oldL oldR lat)
+      (cond
+         (  (null? lat)
+            (quote ())
+         )
+         (  (eq? (car lat) oldL)
+            (cons new (cons oldL (multiinsertLR new oldL oldR (cdr lat))))
+         )
+         (  (eq? (car lat) oldR)
+            (cons oldR (cons new (multiinsertLR new oldL oldR (cdr lat))))
+         )
+         (else
+            (cons
+               (car lat)
+               (multiinsertLR new oldL oldR (cdr lat))
+            )
+         )
+      )
+   )
+)
+
+(multiinsertLR 'topping 'fudge 'ice '(ice cream with fudge for desert))
+
+(multiinsertLR 'jalape√o 'and 'and '(tacos tamales and salsa))
+
+(multiinsertLR '(8oz) 'cup 'cup '(coffee cup tea cup and hick cup))
+
+(multiinsertLR '(low sodium) 'sauce 'sauce '(soy sauce and tomato sauce))
